@@ -1,0 +1,96 @@
+<div class="content_body">
+	<h1 order="3" strict="carrier" group="Мой парк">Добавить водителя</h1>
+	<div id="drivers-form" class="panel light wide">
+		<span class="section__title">Добавить водителя</span>
+		<div class="opts add_form">
+			<div class="optgroup wide">
+				<label for="driverName">ФИО водителя *</label>
+				<input type="text" id="driverName" data-key="driverName" class="form__input udata" placeholder="Иванов Иван Иванович" required>
+			</div>
+			<div class="optgroup">
+				<label for="driverPhone">Телефон *</label>
+				<input type="tel" id="driverPhone" data-key="driverPhone" class="form__input udata" placeholder="+7 (343) _ _-_ _-_ _" required>
+			</div>
+			<div class="optgroup">
+				<label for="driverEmail">E-mail:</label>
+				<input type="email" id="driverEmail" data-key="driverEmail" class="form__input udata" placeholder="mail@yandex.ru" />
+			</div>
+			<div class="optgroup wide">
+				<label>Автомобиль в собственности *</label>
+				<div class="optrow">
+					<div class="quant">
+						<input type="checkbox" name="property" data-key="property" id="propertyYes" class="udata" value="1" />
+						<label for="propertyYes">Да</label>
+					</div>
+				</div>
+			</div>
+			<div class="optgroup">
+				<span class="info__title ">Водительское удостоверение</span>
+				<label for="ticketNum">Номер *</label>
+				<input type="text" id="ticketNum" data-key="ticketNum" class="form__input udata" required>
+				<label for="ticketOn">Дата выдачи *</label>
+				<input type="date" id="ticketOn" data-key="ticketOn" class="form__input udata" required>
+				<label for="ticketOff">Дата окончания *</label>
+				<input type="date" id="ticketOff" data-key="ticketOff" class="form__input udata" required>
+			</div>
+			<div class="optgroup">
+				<span class="info__title">Паспорт</span>
+				<label for="passportSeries">Серия *</label>
+				<input type="text" id="passportSeries" data-key="passportSeries" class="form__input udata" required>
+				<label for="passportNumber">Номер *</label>
+				<input type="text" id="passportNumber" data-key="passportNumber" class="form__input udata" required>
+				<label for="passportIssued">Кем выдан *</label>
+				<input type="text" id="passportIssued" data-key="passportIssued" class="form__input udata" required>
+				<label for="passportDate">Дата выдачи *</label>
+				<input type="date" id="passportDate" data-key="passportDate" class="form__input udata" required>
+			</div>
+		</div>
+		<br clear="all">
+		<span class="section__title">Копии документов</span>
+		<div class="upload_section">
+			<div class="upload_block" id="passport">
+				<span class="block_header">Скан паспорта</span>
+				<div class="fileholder" data-parent="passport"></div>
+				<div class="optrow">
+					<button id="up_passportprogr" class="pgbar add" type="button">Добавить файл</button>
+				</div>
+				<input type="file" id="up_passport" style="display: none;">
+			</div>
+			<div class="upload_block" id="ticket">
+				<span class="block_header">Скан водительского удостоверения</span>
+				<div class="fileholder" data-parent="ticket"></div>
+				<div class="optrow">
+					<button id="up_ticketprogr" class="pgbar add" type="button">Добавить файл</button>
+				</div>
+				<input type="file" id="up_ticket" style="display: none;">
+			</div>
+			<div class="upload_block" id="comment">
+				<span class="block_header">Комментарий</span>
+				<div class="filerow optrow">
+					<input type="text" class="form__input udata" data-key="comment" placeholder="Добавьте описание, если нужно">
+					<button type="button" class="rm">✕</button>
+				</div>
+			</div>
+		</div>
+		<p class="span-title__info">Нажимая кнопку Сохранить, вы соглашаетесь с
+			<a href="//alvetk.ru/privacy-policy" target="_blank">условиями обработки персональных данных</a>
+		</p>
+		<div class="buttonbar">
+			<button id="datasend" type="button" class="form__btn" data-code="driver_add" data-redirect="/drivers">Добавить водителя</button>
+		</div>
+	</div>
+</div>
+
+<script src="/js/assy_store.js?<TMPL_VAR NAME='js'>"></script>
+<script>
+	let check = [ 
+		<TMPL_LOOP NAME = "drivers" > {
+			'passportNumber': '<TMPL_VAR NAME="passportNumber">',
+			'passportSeries': '<TMPL_VAR NAME="passportSeries">'
+		}, 
+		</TMPL_LOOP> {
+			'passportNumber': '',
+			'passportSeries': ''
+		}
+	];
+</script>

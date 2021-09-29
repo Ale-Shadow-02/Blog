@@ -1,0 +1,156 @@
+<div class="content_body">
+	<h1 order="2" strict="carrier" group="Мой парк">Автомобили и прицепы</h1>
+
+	<div class="drivers__sort sort-box" data-target="div.listHolder">
+		<div class="surname">
+			<span class="surname__title span-title">Сортировать:</span>
+			<span class="surname__title--sort" data-sort="autoBrand">Марка автомобиля</span>
+			<span class="surname__title--sort" data-sort="withTrailer">С прицепом/без</span>
+			<span class="surname__title--sort" data-sort="trailerCarrying">Грузоподъемность</span>
+		</div>
+	</div>
+	<div class="listHolder">
+	<TMPL_LOOP NAME="auto">
+		<div class="rowOut">
+			<div class="drivers-tab__header tab-open">
+				<div class="trucks-col-1">
+					<span class="drivers-tab__header--surname rdata" data-var="autoBrand">
+						<TMPL_VAR NAME="autoBrand">
+					</span>
+				</div>
+				<div class="trucks-col-wrap">
+					<div class="drivers-tab__header--block">
+						<div class="wrap-box wrap_checker">
+							<div class="rdata checker<TMPL_IF NAME='withTrailer'> checked</TMPL_IF>" data-var="withTrailer">&#9744;</div>
+							<p class="span-title__info">С прицепом</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="trucks-col-wrap">
+					<div class="drivers-tab__header--block">
+						<span class="drivers-tab__header--surname rdata" data-var="trailerCarrying">
+							<TMPL_VAR NAME="trailerCarrying">
+						</span> тонн
+					</div>
+				</div>
+
+				<div class="drivers-tab__open">
+					<span class="arrow-bottom"></span>
+				</div>
+			</div>
+			<div class="drivers-info">
+				<div class="drivers-info__property">
+					<div class="wrap-box wrap_checker">
+						<div class="rdata checker<TMPL_IF NAME='withTrailer'> checked</TMPL_IF>" data-var="withTrailer">&#9744;</div>
+						<p class="span-title__info">С прицепом</p>
+					</div>
+				</div>
+				<div class="drivers-info__car">
+					<div class="drivers-info__title">
+						<span class="info__title">Автомобиль</span>
+					</div>
+					<div class="car-data">
+						<div class="drivers-info__car--num">
+							<div class="car-num_wrap">
+								<span class="span-title__info">Марка:</span>
+								<span class="span-title__info--text rdata" data-var="autoBrand">
+									<TMPL_VAR NAME="autoBrand">
+								</span>
+							</div>
+							<div class="drivers-info__car--carnum">
+								<span class="span-title__info--text rdata" data-var="autoNumber">
+									<TMPL_VAR NAME="autoNumber">
+								</span>
+							</div>
+						</div>
+						<div class="drivers-info__car--type">
+							<div class="drivers-info__car--type-wrap">
+								<span class="span-title__info">Тип кузова:</span>
+								<span class="span-title__info--text rdata" data-var="autoType">
+									<TMPL_VAR NAME="autoType">
+								</span>
+							</div>
+							<div class="drivers-info__car--type-wrap">
+								<span class="span-title__info">Тип загрузки:</span>
+								<span class="span-title__info--text rdata" data-var="loadingType">
+									<TMPL_VAR NAME="loadingType">
+								</span>
+							</div>
+							<div class="drivers-info__car--type-wrap">
+								<span class="span-title__info">Цвет кузова:</span>
+								<span class="span-title__info--text rdata" data-var="autoColor">
+									<TMPL_VAR NAME="autoColor">
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="drivers-info__trailer drivers-info__car">
+					<div class="drivers-info__title">
+						<span class="info__title">Прицеп</span>
+					</div>
+					<div class="car-data">
+						<div class="drivers-info__car--num">
+							<div class="drivers-info__car--carnum">
+								<span class="span-title__info--text rdata" data-var="trailerNumber">
+									<TMPL_VAR NAME="trailerNumber">
+								</span>
+							</div>
+							<div class="color-wrap">
+								<span class="span-title__info">Цвет прицепа:</span>
+								<span class="span-title__info--text rdata" data-var="trailerColor">
+									<TMPL_VAR NAME="trailerColor">
+								</span>
+							</div>
+						</div>
+						<div class="drivers-info__car--type">
+							<div class="drivers-info__car--type-wrap">
+								<span class="span-title__info">Длина, м:</span>
+								<span class="span-title__info--text rdata" data-var="trailerLength">
+									<TMPL_VAR NAME="trailerLength">
+								</span>
+							</div>
+							<div class="drivers-info__car--type-wrap">
+								<span class="span-title__info">Ширина,м:</span>
+								<span class="span-title__info--text">2,45</span>
+							</div>
+							<div class="drivers-info__car--type-wrap">
+								<span class="span-title__info">Высота, м:</span>
+								<span class="span-title__info--text rdata" data-var="trailerWidth">
+									<TMPL_VAR NAME="trailerWidth">
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="trailer-data_last">
+						<div class="trailer-wrap">
+							<span class="span-title__info">Грузоподъемность, тонн:</span>
+							<span class="span-title__info--text rdata" data-var="trailerCarrying">
+								<TMPL_VAR NAME="trailerCarrying">
+							</span>
+						</div>
+						<div class="trailer-wrap">
+							<span class="span-title__info">Объем кузова, куб.м:</span>
+							<span class="span-title__info--text rdata" data-var="trailerVolume">
+								<TMPL_VAR NAME="trailerVolume">
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="drivers-info__comment">
+					<div class="drivers-info__title">
+						<span class="info__title">Комментарий:</span>
+					</div>
+					<div class="comment">
+						<p class="comment_text rdata" data-var="comment">
+							<TMPL_VAR NAME="comment">
+						</p>
+					</div>
+				</div>
+			</div>
+		</div><!-- One Data row-->
+	</TMPL_LOOP>
+	</div><!-- Row Holder-->
+</div>
+<script type="text/javascript" src="/js/assy_request.js?<TMPL_VAR NAME='js'>"></script>

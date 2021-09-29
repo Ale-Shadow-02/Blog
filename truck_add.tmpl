@@ -1,0 +1,140 @@
+<div class="content_body">
+	<h1 order="4" strict="carrier" group="Мой парк">Добавить транспорт</h1>
+	<ul id="Tabs" class="Tabs">
+		<li id="t0" class="Tab active" onclick="tabSwitch(this)">Автомобиль</li>
+		<li id="t1" class="Tab" onclick="tabSwitch(this)">Прицеп</li>
+	</ul>
+	<div id="tabHolder" class="panel light wide">
+		<div id="tab_0" class="tabContent shown opts add_form">
+			<span class="section__title optrow">Данные автомобиля</span>
+			<div class="optgroup">
+				<label for="trackBrand">Марка авто *</label>
+				<input type="text" id="trackBrand" data-key="trackBrand" class="form__input udata" required>
+			</div>
+			<div class="optgroup">
+				<label for="trackNumCar">Гос номер *</label>
+				<input type="text" id="trackNumCar" data-key="trackNumCar" value="" class="form__input udata" required>
+			</div>
+			<div class="optgroup">
+				<label for="trackTypeCar">Тип кузова *</label>
+				<input type="hidden" id="trackTypeCar" data-key="trackTypeCar" class="form__input udata" required/>
+				<select class="form__input" data-target="trackTypeCar">
+					<option value="">Тип не выбран</option>
+					<option value="Тягач">Тягач</option>
+					<option value="Фургон">Фургон</option>
+					<option value="Прицеп">Прицеп</option>
+					<option value="Полуприцеп">Полуприцеп</option>
+					<option value="Грузовой тягач сидельный">Грузовой тягач сидельный</option>
+					<option value="Тентованный">Тентованный</option>
+					<option value="Рефрежиратор">Рефрежиратор</option>
+					<option value="РК7315/37">РК7315/37</option>
+					<option value="Изотермический">Изотермический</option>
+					<option value="Бортовой">Бортовой</option>
+					<option value="Контейнер 40ФУТ">Контейнер 40ФУТ</option>
+					<option value="Krone (Кроне)">Krone (Кроне)</option>
+					<option value="Humbaur (Хамбаур)">Humbaur (Хамбаур)</option>
+					<option value="Schmitz (Шмитц)">Schmitz (Шмитц)</option>
+					<option value="Тентованный(сцепка)">Тентованный(сцепка)</option>
+					<option value="Тушевоз">Тушевоз</option>
+					<option value="Ломовоз">Ломовоз</option>
+					<option value="Термос">Термос</option>
+					<option value="Трал">Трал</option>
+					<option value="Автокран">Автокран</option>
+					<option value="Полуприцеп-рефрижератор">Полуприцеп-рефрижератор</option>
+					<option value="Тонар">Тонар</option>
+					<option value="Площадка со стойками">Площадка со стойками</option>
+					<option value="Площадка">Площадка</option>
+					<option value="Kogel (Когель)">Kogel (Когель)</option>
+				</select>
+			</div>
+			<div class="optgroup">
+				<label for="trackColorCar">Цвет кузова *</label>
+				<input type="text" id="trackColorCar" data-key="trackColorCar" class="form__input udata" required>
+			</div>
+			<div class="optgroup">
+				<label for="trailerVolume">Объем кузова, куб. м *</label>
+				<input type="text" id="trailerVolume" data-key="trailerVolume" class="form__input udata" required/>
+			</div>
+			<div class="optgroup">
+				<label for="trackCarWeight">Грузоподъемность, тонн *</label>
+				<input type="text" id="trackCarWeight" data-key="trackCarWeight" class="form__input udata" required/>
+			</div>		<!-- optrow -->
+			<div class="optgroup">
+				<label for="trailerLength">Длина, м *</label>
+				<input type="text" id="trailerLength" data-key="trailerLength" class="form__input udata" required>
+			</div>
+			<div class="optgroup">
+				<label for="trailerWidth">Ширина, м *</label>
+				<input type="text" id="trailerWidth" data-key="trailerWidth" class="form__input udata" required>
+			</div>
+			<div class="optgroup">
+				<label for="trackType">Вид транспорта *</label>
+				<input type="hidden" id="trackType" data-key="trackType" class="form__input udata" required/>
+				<select class="form__input" data-target="trackType">
+					<option value="">Не указано</option>
+					<option value="Привлеченный">Привлеченный</option>
+					<option value="Собственный тягач">Собственный тягач</option>
+					<option value="Собственный прочее">Собственный прочее</option>
+				</select>
+			</div>
+		</div>
+
+		<div id="tab_1" class="tabContent opts add_form">
+			<span class="section__title optrow">Данные прицепа</span>
+			<div class="optgroup">
+				<label for="trailerNum">Гос номер прицепа *</label>
+				<input type="text" id="trailerNum" data-key="trailerNum" class="form__input udata" required>
+			</div>
+			<div class="optgroup">
+				<label for="trailerColor">Цвет прицепа *</label>
+				<input type="text" id="trailerColor" data-key="trailerColor" class="form__input udata" required>
+			</div>
+		</div>
+		<br clear="all">
+		<span class="section__title">Копии документов</span>
+		<div class="upload_section">
+			<div class="upload_block" id="tech_passport">
+				<span class="block_header">Скан техпаспорта</span>
+				<div class="fileholder" data-parent="tech_passport"></div>
+				<div class="optrow">
+					<button id="up_passportprogr" class="pgbar add" type="button">Добавить файл</button>
+				</div>
+				<input type="file" id="up_tech_passport" style="display: none;">
+			</div>
+			<div class="upload_block" id="comment">
+				<span class="block_header">Комментарий</span>
+				<div class="filerow optrow">
+					<input type="text" class="form__input udata" data-key="comment" placeholder="Добавьте описание, если нужно">
+					<button type="button" class="rm">✕</button>
+				</div>
+			</div>
+		</div>
+		<p class="span-title__info">Нажимая кнопку Сохранить, вы соглашаетесь с
+			<a href="//alvetk.ru/privacy-policy" target="_blank">условиями обработки персональных данных</a>
+		</p>
+		<div class="buttonbar">
+			<button id="datasend" type="button" class="form__btn" data-code="truck_add" data-redirect="/trucks">Сохранить</button>
+		</div>
+	</div>
+</div>
+
+<script src="/js/assy_store.js?<TMPL_VAR NAME='js'>"></script>
+<script>
+let check = [
+	<TMPL_LOOP NAME="auto">'<TMPL_VAR NAME="autoNumber">',
+</TMPL_LOOP>
+''];
+
+	document.querySelectorAll('select.form__input').forEach( sl =>{
+			sl.addEventListener('change', function() {
+						document.querySelectorAll('input.udata[data-key="'+sl.dataset.target+'"]')
+								.forEach( inp =>{
+											inp.value = sl.value;
+										});
+						document.querySelectorAll('select.form__input[data-target="'+sl.dataset.target+'"]')
+								.forEach( double =>{
+											double.value = sl.value;
+										});
+					});
+		});
+</script>

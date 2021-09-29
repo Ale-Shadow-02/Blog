@@ -1,0 +1,149 @@
+<div class="content_body">
+	<h1 order="3">Мои финансы</h1>
+	<span class="finance__info--title">
+		<TMPL_IF NAME="is_customer">Платежи<TMPL_ELSE>Доход</TMPL_IF>
+	</span>
+	<div class="bid__filter form__data">
+		<input type="hidden" data-key="koldoc" class="udata" value="<TMPL_VAR NAME='koldoc'>" />
+		<input type="hidden" data-key="_umode" class="udata" value="<TMPL_VAR NAME='_umode'>" />
+		<input type="hidden" data-key="from" class="udata" value="<TMPL_VAR NAME='from'>" />
+		<input type="hidden" data-key="_uid" class="udata" value="<TMPL_VAR NAME='_uid'>" />
+		<input type="hidden" data-key="status" class="udata" value="1" />
+		<div class="finance__filter--item">
+			<span class="span-period span-title">Выбрать период:</span>
+			<div class="wrap-input">
+				<input type="date" data-key="begin" id="d_start" class=" udata input head-number__request"
+					value="<TMPL_VAR NAME='begin-dd'>" placeholder="Начало периода:">
+			</div>
+			<div class="dash"></div>
+			<div class="wrap-input">
+				<input type="date" data-key="end" id="d_end" class=" udata input head-number__request"
+					value="<TMPL_VAR NAME='end-dd'>" placeholder="Окончание периода:">
+			</div>
+			<div class="wrap-btn">
+				<button type="button" class="form__btn" data-code="finance" id="sendquery">Показать</button>
+			</div>
+		</div>
+	</div>
+	<div class="report fail">
+		<h3><strong>За период c <span>
+					<TMPL_VAR NAME='begin-dd'>
+				</span> по <span>
+					<TMPL_VAR NAME='end-dd'>
+				</span> данные не найдены</strong></h3>
+	</div>
+	<div class="report body rdata" data-var="prixod">
+		<div class="rowSample">
+			<div class="finance__info">
+					<span class="finance__info--title rdata monthName" data-var="month">777</span>
+					<div class="wrap-span tab-open">
+						<div class="wrap-span_block">
+							<span class="finance__info--subtitle">Всего за период:</span>
+							<span class="finance__info--subtitle rdata money" data-var="sumTotal">Сумма за период: </span>
+						</div>
+						<div class="wrap-span_block">
+							<span class="finance__info--subtitle">Оплачено:</span>
+							<span class="finance__info--subtitle rdata money" data-var="sumDebit">Оплачено: </span>
+						</div>
+						<div class="wrap-span_block mobil">
+							<span class="finance__info--subtitle">Долг:</span>
+							<span class="finance__info--subtitle rdata money" data-var="sumCredit">Долг: </span>
+						</div>
+						<div class="finance_block-close requests-unfurl">
+							<span class="arrow-bottom"></span>
+						</div>
+					</div>
+				<div class="finance__info--block">
+					<div class="finance__info--block-title sort-box" data-target="div.rdata[data-var='bid']">
+						<div class="finance__info--block-title-date">
+							<span class="finance__info--block-title-text" data-sort="bidDate-dd">Дата</span>
+						</div>
+						<div class="finance__info--block-title-summ">
+							<span class="finance__info--block-title-text" data-sort="bidSum">Сумма, руб</span>
+						</div>
+						<div class="finance__info--block-title-status">
+							<span class="finance__info--block-title-text" data-sort="payed">Статус оплаты</span>
+						</div>
+						<div class="finance__info--block-title-bid">
+							<span class="finance__info--block-title-text" data-sort="bidNumber">Заявка</span>
+						</div>
+						<div class="finance__info--block-title-route">
+							<span class="finance__info--block-title-text" data-sort="rout">Маршрут</span>
+						</div>
+						<div class="finance__info--block-tab-last"></div>
+					</div>
+					<div class="rdata" data-var="bid">
+						<div class="rowSample">
+							<div class="finance_block tab-open">
+								<div class="finance_block-col-1">
+									<span class="col-1_text rdata" data-var="bidDate-dd"></span>
+								</div>
+								<div class="finance__info--block-wrap">
+									<div class="finance_block-col-2">
+										<div class="col-2_text rdata money" data-var="bidSum"></div>
+									</div>
+									<div class="finance_block-col-3 wrap_checker">
+										<div class="checker rdata" data-var="payed">&#9744;</div>
+										<p class="label_checkbox">Оплата</p>
+									</div>
+									<div class="finance_block-col-4">
+										<span class="col-4_text"><strong>№</strong></span> <span class="col-4_text rdata"
+											data-var="bidNumber"></span>
+									</div>
+									<div class="finance_block-col-5">
+										<div class="rdata" data-var="rout"></div>
+									</div>
+								</div>
+								<div class="finance_block-close requests-unfurl">
+									<span class="arrow-bottom"></span>
+								</div>
+							</div>
+							<div class="finance_block-open">
+								<div class="block-open__body">
+									<div class="block-open__summ">
+										<span class="span-title__info">Сумма, руб</span>
+										<span class="block-open__summ--text span-title rdata money" data-var="bidSum"></span>
+									</div>
+									<div class="block-open__status wrap_checker">
+										<div class="checker rdata" data-var="payed">&#9744;</div>
+										<p class="label_checkbox">Оплата</p>
+									</div>
+									<div class="block-open__bid">
+										<span class="span-title__info">Заявка:</span>
+										<span class="block-open__summ--text span-title rdata" data-var="bidNumber">№ </span>
+									</div>
+									<div class="block-open__city">
+										<div class="rdata" data-var="rout">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div><!-- finance__info--block -->
+			</div>
+		</div>
+<!--
+			<div class="other">
+				<ul data-code="request" class="pagination">
+					<li class="page-item skip" data-page="prev">
+						&#171;
+					</li>
+					<li class="page-item active" data-page="1">1</li>
+					<li class="page-item skip" data-page="next">
+						&#187;
+					</li>
+				</ul>
+				<div class="other-sort">
+					<p class="other-sort title">Предыдущие месяцы:</p>
+					<div class="other-sort month">
+						<span class="month"></span>
+						<span class="month"></span>
+						<span class="month"></span>
+					</div>
+				</div>
+			</div>
+-->
+	</div>
+</div>
+<script src="/js/assy_request.js?<TMPL_VAR NAME='js'>"></script>

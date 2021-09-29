@@ -1,0 +1,107 @@
+<div class="content_body">
+	<h1 order="1" strict="carrier" group="Мой парк">Водители</h1>
+	<div class="drivers__sort sort-box" data-target="div.listHolder">
+		<div class="surname">
+			<span class="surname__title span-title">Сортировать:</span>
+			<span class="surname__title--sort" data-sort="driverName">ФИО водителя</span>
+		</div>
+	</div>
+	<div class="listHolder">
+	<TMPL_LOOP NAME="driverInfo">
+		<div class="rowOut">
+			<div class="drivers-tab__header tab-open">
+				<div class="trucks-col-1">
+					<span class="drivers-tab__header--surname rdata" data-var="driverName">
+						<TMPL_VAR NAME="driverName">
+					</span>
+				</div>
+				<div class="wrap_checker">
+					<div class="rdata checker<TMPL_IF NAME='isOwn'> checked</TMPL_IF>" data-var="isOwn">&#9744;</div>
+					<p class="span-title__info">Автомобиль в собственности</p>		
+				</div>
+				<div class="drivers-tab__open">
+					<span class="arrow-bottom"></span>
+				</div>
+			</div>
+			<div class="drivers-info">
+				<div class="drivers-info__property">
+					<div class="wrap_checker">
+						<div class="rdata checker<TMPL_IF NAME='isOwn'> checked</TMPL_IF>" data-var="isOwn">&#9744;</div>
+						<p class="span-title__info">Автомобиль в собственности</p>	
+					</div>
+					<a href="tel:<TMPL_VAR NAME='userPhone'>" class="button rdata" data-var="userPhone">
+						<span class="button__text">Связаться с водителем</span>
+						<span class="button__tel">
+							<div class="button__border"></div>
+							<img src="img/vector_phone.svg" alt="phone" />
+						</span>
+					</a>
+				</div>
+				<div class="drivers-info__ticket">
+					<div class="drivers-info__title">
+						<span class="info__title">Водительское удостоверение</span>
+					</div>
+					<div class="drivers-info__ticket--data">
+						<div class="drivers-info__ticket--number">
+							<span class="span-title__info">Номер:</span>
+							<span class="span-title__info--text rdata" data-var="ticketNumber">
+								<TMPL_VAR NAME="ticketNumber">
+							</span>
+						</div>
+						<div class="drivers-info__ticket--date">
+							<div class="drivers-info__ticket--date-wrap">
+								<img src="img/icon-calendar.svg" alt="calendar" class="drivers_img" />
+								<span class="span-title__info">Дата выдачи:</span>
+							</div>
+							<span class="span-title__info--text drivers-date_text rdata" data-var="ticketStartDate-dd">
+								<TMPL_VAR NAME="ticketStartDate-dd">
+							</span>
+						</div>
+						<div class="drivers-info__ticket--date">
+							<div class="drivers-info__ticket--date-wrap">
+								<img src="img/icon-calendar.svg" alt="calendar" class="drivers_img" />
+								<span class="span-title__info">Дата окончания:</span>
+							</div>
+							<span class="span-title__info--text drivers-date_text rdata" data-var="ticketFinishDate-dd">
+								<TMPL_VAR NAME="ticketFinishDate-dd">
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="drivers-info__passport">
+					<div class="drivers-info__title">
+						<span class="info__title">Паспорт</span>
+					</div>
+					<div class="drivers-info__passport--data">
+						<div class="drivers-info__passport--item">
+							<span class="span-title__info">Серия:</span>
+							<span class="span-title__info--text rdata" data-var="passportSeries">
+								<TMPL_VAR NAME="passportSeries">
+							</span>
+						</div>
+						<div class="drivers-info__passport--item">
+							<span class="span-title__info">Номер:</span>
+							<span class="span-title__info--text rdata" data-var="passportNumber">
+								<TMPL_VAR NAME="passportNumber">
+							</span>
+						</div>
+						<div class="drivers-info__passport--item">
+							<span class="span-title__info">Дата выдачи:</span>
+							<span class="span-title__info--text rdata" data-var="passportDate-dd">
+								<TMPL_VAR NAME="passportDate-dd">
+							</span>
+						</div>
+					</div>
+					<div class="drivers-info__passport--issued">
+						<span class="span-title__info">Кем выдан:</span>
+						<span class="span-title__info--text rdata" data-var="passportIssuedBy">
+							<TMPL_VAR NAME="passportIssuedBy">
+						</span>
+					</div>
+				</div>
+			</div>
+		</div><!-- One Row of list-->
+	</TMPL_LOOP>
+	</div><!-- List Holder -->
+</div>
+<script type="text/javascript" src="/js/assy_request.js?<TMPL_VAR NAME='js'>"></script>

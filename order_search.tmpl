@@ -1,0 +1,247 @@
+<div class="content_body">
+	<h1 order="4" strict="carrier">Найти новую заявку</h1>
+	<div class="history-form__top">
+		<div class="history-form__title">
+			<img src="/img/filter.svg" alt="filter" class="history-form__image">
+			<span class="history-form__text">Выбор по параметрам</span>
+		</div>
+	</div>
+	<div class="panel light wide bg-color">
+		<input type="hidden" data-key="begin" class="udata" value="<TMPL_VAR NAME='begin-dd'>" />
+		<input type="hidden" data-key="end" class="udata" value="<TMPL_VAR NAME='end-dd'>" />
+		<input type="hidden" data-key="koldoc" class="udata" value="<TMPL_VAR NAME='koldoc'>" />
+		<input type="hidden" data-key="_umode" class="udata" value="<TMPL_VAR NAME='_umode'>" />
+		<input type="hidden" data-key="from" class="udata" value="<TMPL_VAR NAME='from'>" />
+		<input type="hidden" data-key="_uid" class="udata" value="<TMPL_VAR NAME='_uid'>" />
+		<input type="hidden" data-key="status" class="udata" value="1" />
+		<div class="opts">
+			<div class="optgroup wide">
+				<label for="town" class="order-search">По городу</label>
+				<input type="text" id="town" class="form__input" placeholder="Город">
+			</div>
+			<div class="optgroup">
+				<label for="cargo" class="order-search">По грузу</label>
+				<input type="text" id="cargo" class="form__input" placeholder="Груз">
+				<label for="weight" class="order-search">По весу</label>
+				<input type="text" id="weight" class="form__input" placeholder="Вес">
+			</div>
+			<div class="optgroup">
+				<label for="volume" class="order-search">По объему</label>
+				<input type="text" id="volume" class="form__input" placeholder="Объем">
+				<label for="cost" class="order-search">По стоимости</label>
+				<input type="text" id="cost" class="form__input" placeholder="Стоимость">
+			</div>
+			<div class="head-button">
+				<span class="head-cleaning">
+					<img src="/img/cleaning.svg" alt="cleaning" class="head-cleaning__image">
+					<span class="head-cleaning__text">Очистить фильтр</span>
+				</span>
+				<button type="button" class="form__btn" data-code="request" id="sendquery">Выбрать</button>
+			</div>
+		</div>
+	</div>
+	<!--Data output table with status: "1" -->
+	<div class="report fail">
+		<h3><strong>За период c <span>
+					<TMPL_VAR NAME='begin-dd'>
+				</span> по <span>
+					<TMPL_VAR NAME='end-dd'>
+				</span> записи не найдены</strong></h3>
+	</div>
+	<div class="report body rdata" data-var="list">
+		<div class="result-total__header">
+			<span class="result-total__header--title col-1">Заявка</span>
+			<span class="result-total__header--title col-2">Маршрут</span>
+			<span class="result-total__header--title col-3">Период перевозки</span>
+			<span class="result-total__header--title col-4">Водитель</span>
+			<span class="result-total__header--title col-5">Транспорт</span>
+			<span class="result-total__header--title col-6">Оплата</span>
+		</div>
+		<div class="rowSample">
+			<div class="requests-number tab-open">
+				<div class="requests-number__ordinal">
+					<span class="bid__reqvuisition--text rdata" data-var="requestNumber"></span>
+				</div>
+				<div class="wrap-center">
+					<div class="requests-stage__course">
+						<div class="requests-stage__sity rdata" data-var="rout">
+						</div>
+					</div>
+					<div class="requests-stage__date">
+						<span class="requests-stage__loading rdata" data-var="onDate-dd"></span>
+						<span class="arrow-right">&#8674;</span>
+						<span class="requests-stage__unloading requests-stage__loading rdata" data-var="offDate-dd"></span>
+					</div>
+					<div class="requests-stage__drivername">
+						<span class="rdata" data-var="driverName"></span>
+					</div>
+					<div class="requests-stage__drivername">
+						<span class="rdata" data-var="carModel"></span>
+					</div>
+					<div class="requests-stage">
+						<div class="requests-stage__payment">
+							<input type="checkbox" disabled class="checkbox rdata" data-var="payed" />
+							<span class="new-checkbox"></span>
+							<p class="requests-stage__result">Оплата</p>
+						</div>
+					</div>
+				</div>
+				<div class="requests-unfurl">
+					<span class="arrow-bottom">&#8964;</span>
+				</div>
+			</div>
+			<div class="result-full__data">
+				<div class="row-history">
+					<div class="city-field">
+						<div class="city-field__text rdata" data-var="rout"></div>
+					</div>
+					<div class="city-date">
+						<img src="/img/icon-calendar.svg" alt="calendar" class="city-date__icon">
+						<div class="city-date__text line1-date__text rdata" data-var="onDate-dd"></div>
+						<span class="arrow-right">&#8674;</span>
+						<span class="city-date__text rdata" data-var="offDate-dd"></span>
+					</div>
+				</div>
+				<div class="row-history">
+					<div class="trucking-car__toving">
+						<span class="trucking-car__title">Авто:</span>
+						<span class="trucking-car__name rdata" data-var="carModel"></span>
+					</div>
+					<div class="funds">
+						<div class="cargo-block cargo-block__lkz--cost">
+							<div class="symbol-ruble"><span class="symbol-ruble_text">&#8381;</span></div>
+							<div class="cargo-block__type">
+								<span class="data__transportation--title">Стоимость, руб</span>
+								<span class="data__transportation--text rdata" data-var="cost"></span>
+							</div>
+						</div>
+						<div class="cargo-block cargo-block__lkz--indebtedness">
+							<div class="symbol-ruble"><span class="symbol-ruble_text">&#8381;</span></div>
+							<div class="cargo-block__type">
+								<span class="data__transportation--title">Отсрочка платежа, дней:</span>
+								<span class="data__transportation--text rdata" data-var="postponement"></span>
+							</div>
+						</div>
+						<div class="cargo-block funds__cargo-block--last">
+							<img src="/img/icon-calendar.svg" alt="icon-calendar" class="cargo-block__image">
+							<div class="cargo-block__type">
+								<span class="data__transportation--title">Срок оплаты:</span>
+								<span class="data__transportation--text rdata" data-var="paymentOff-dd"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row-history">
+					<div class="contacts line2-contacts">
+						<div class="contacts-block">
+							<span class="data__transportation--title">Контактное лицо заказчика:</span>
+							<span class="data__transportation--text rdata" data-var="customer"></span>
+						</div>
+						<a href="tel:" class="button rdata link" data-var="customerPhone">
+							<span class="button__text rdata" data-var="customerPhone">Связаться VAR</span>
+							<div class="button__tel">
+								<div class="button__border"></div>
+								<img src="/img/vector_phone.svg" alt="PHONE" />
+							</div>
+						</a>
+					</div>
+					<div class="contacts line2-contacts">
+						<div class="contacts-block">
+							<span class="data__transportation--title">Контактное лицо перевозчика:</span>
+							<span class="data__transportation--text rdata" data-var="logist"></span>
+						</div>
+						<a href="tel:" class="button rdata link" data-var="logistPhone">
+							<span class="button__text rdata" data-var="logistPhone"></span>
+							<div class="button__tel">
+								<div class="button__border"></div>
+								<img src="/img/vector_phone.svg" alt="PHONE" />
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="rdata" data-var="detailsCargo">
+					<div class="rowSample">
+						<div class="row-history">
+							<div class="cargo-block cargo-block_view">
+								<div class="cargo-block__type">
+									<span class="data__transportation--title">Тип</span>
+									<span class="data__transportation--text rdata" data-var="loadingView"></span>
+								</div>
+							</div>
+							<div class="cargo-block cargo-block__border">
+								<img src="/img/icon-box.svg" alt="" class="cargo-block__image">
+								<div class="cargo-block__type">
+									<span class="data__transportation--title">Груз:</span>
+									<span class="data__transportation--text rdata" data-var="cargoName"></span>
+								</div>
+							</div>
+							<div class="cargo-block cargo-block__border">
+								<img src="/img/icon-weight.svg" alt="icon-weight" class="cargo-block__image">
+								<div class="cargo-block__type">
+									<span class="data__transportation--title">Вес, тонн:</span>
+									<span class="data__transportation--text rdata" data-var="cargoWeight"></span>
+								</div>
+							</div>
+							<div class="cargo-block">
+								<img src="/img/icon-volume.svg" alt="icon-volume" class="cargo-block__image">
+								<div class="cargo-block__type">
+									<span class="data__transportation--title">Объем, куб.м:</span>
+									<span class="data__transportation--text rdata" data-var="cargoVolume">25</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="line4">
+					<div class="line4-document">
+						<p class="bid-document__title">Документы:</p>
+						<ul class="bid-document__list">
+							<li class="bid-document__item rdata" data-var="document">
+								<a href="#" class="bid-document__item--link rowSample">
+									<img src="/img/mime/icn_$VAR_32x32.png" alt="pdf" class="bid-document__image rdata"
+										data-var="documentFile">
+									<span class="bid-document__text rdata" data-var="documentName"></span>.<span
+										class="bid-document__text rdata" data-var="documentFile"></span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="line4-additional">
+						<div class="line4-additional__block line4-additional__block--lkz">
+							<span class="bid-additional__title">Дополнительная информация:</span>
+							<p class="bid-additional__text rdata" data-var="comment"></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bid-total">
+			<p class="result__title">Показано<span class="result__title--amount shownrec"></span> из <span
+					class="result__title--amount totalrec"></span> <span data-plural="записи,записей,записей"></span></p>
+		</div>
+		<div class="other">
+			<ul data-code="request" class="pagination">
+				<li class="page-item skip" data-page="prev">
+					&#171;
+					<!-- LEFT-POINTING DOUBLE ANGLE QUOTATION MARK -->
+				</li>
+				<li class="page-item active" data-page="1">1</li>
+				<li class="page-item" data-page="2">2</li>
+				<li class="page-item" data-page="3">3</li>
+				<li class="page-item skip" data-page="next">
+					&#187;
+					<!-- RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK -->
+				</li>
+			</ul>
+			<div class="other-sort">
+				<p class="other-sort title">Предыдущие месяцы:</p>
+				<div class="other-sort month">
+					<span class="month"></span>
+					<span class="month"></span>
+					<span class="month"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="/js/assy_store.js?<TMPL_VAR NAME='js'>"></script>

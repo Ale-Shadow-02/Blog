@@ -1,0 +1,79 @@
+<div class="content_body">
+	<h1 order="4" strict="customer">Создать новую заявку</h1>
+	<div id="order_add" class="panel light wide">
+		<span class="section__title">Новая заявка</span>
+		<span class="new-bid_subtitle">Заполните форму по перевозке груза и наш менеджер свяжется с вами в ближайшее время для уточнения заказа</span>
+		<span class="new-bid_subtitle-star">* звездочкой обозначены поля, обязательные для заполнения</span>
+		<div class="opts">
+			<div class="optgroup wide">
+				<span class="info__title">Маршрут</span>
+				<label for="addressOn">Адрес отправления *</label>
+				<input type="text" id="addressOn" data-key="addressOn" class="form__input udata" placeholder="Например, Россия, г. Екатеринбург, ул. Стрелочников, д. 9А" required>
+			</div>
+			<div class="optgroup wide">
+				<label for="addressOff">Адрес назначения *</label>
+				<input type="text" id="addressOff" data-key="addressOff" class="form__input udata" placeholder="Например, Россия, г.Ставрополь, ул. Комсомольская, д.3" required>
+			</div>
+			<div class="optgroup">
+				<label for="dateOn">Период отправки *</label>
+				<input type="date" id="dateOn" data-key="dateOn" class="form__input udata" placeholder="10.12.20" required>
+			</div>
+			<div class="optgroup">
+				<label for="dateOff">До:</label>
+				<input type="date" id="dateOff" data-key="dateOff" class="form__input udata" placeholder="16.12.20" required>
+			</div>
+			<div class="optgroup">
+				<span class="lkz-new-bid__form--title-input">Информация о грузе</span>
+				<label for="cargoName">Наименование:</label>
+				<input type="text" id="cargoName" data-key="cargoName" class="form__input udata" placeholder="Запчасти" required>
+				<label for="cargoWeight" class="cars-drivers__form--label-name cars-drivers__form--label">Масса, тонн *</label>
+				<input type="text" id="cargoWeight" data-key="cargoWeight" class="form__input udata" placeholder="28" required>
+				<label for="cargoVolume">Объем, куб. м *</label>
+				<input type="text" id="cargoVolume" data-key="cargoVolume" class="form__input udata" placeholder="255" required>
+			</div>
+			<div class="optgroup">
+				<span class="lkz-new-bid__form--title-input">Требования к транспорту</span>
+				<label for="loadingType">Тип загрузки *</label>
+				<input type="text" id="loadingType" data-key="loadingType" class="form__input udata" placeholder="Боковая" required>
+				<label for="unloadingType" class="cars-drivers__form--label-name cars-drivers__form--label">Тип разгрузки *</label>
+				<input type="text" id="unloadingType" data-key="unloadingType" class="form__input udata" placeholder="Боковая" required>
+				<label for="carWeight">Грузоподъемность, тонн *</label>
+				<input type="text" id="carWeight" data-key="carWeight" class="form__input udata" placeholder="27" required>
+				<label for="carVolume">Объем кузова, куб. м *</label>
+				<input type="text" id="carVolume" data-key="carVolume" class="form__input udata" placeholder="300" required>
+			</div>
+		</div>
+		<br clear="all">
+		<span class="section__title">Копии документов</span>
+		<div class="upload_section">
+			<div class="upload_block" id="passport">
+				<div class="fileholder" data-parent="passport"></div>
+				<div class="optrow">
+					<button id="up_passportprogr" class="pgbar add" type="button">Добавить файл</button>
+				</div>
+				<input type="file" id="up_passport" style="display: none;">
+			</div>
+			<div class="upload_block" id="ticket">
+				<div class="fileholder" data-parent="ticket"></div>
+				<div class="optrow">
+					<button id="up_ticketprogr" class="pgbar add" type="button">Добавить файл</button>
+				</div>
+				<input type="file" id="up_ticket" style="display: none;">
+			</div>
+			<div class="upload_block" id="comment">
+				<span class="block_header">Комментарий</span>
+				<div class="filerow optrow">
+					<input type="text" class="form__input udata" data-key="comment" placeholder="Добавьте описание, если нужно">
+					<button type="button" class="rm">✕</button>
+				</div>
+			</div>
+		</div>
+		<p class="span-title__info">Нажимая кнопку Сохранить, вы соглашаетесь с
+			<a href="//alvetk.ru/privacy-policy" target="_blank">условиями обработки персональных данных</a>
+		</p>
+		<div class="buttonbar">
+			<button id="datasend" type="button" class="form__btn" data-code="order_add" data-redirect="/carting">Сохранить данные</button>
+		</div>
+	</div>
+</div>
+<script src="/js/assy_store.js?<TMPL_VAR NAME='js'>"></script>
