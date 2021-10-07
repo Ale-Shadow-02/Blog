@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+:root {
+	--body-back: #ffffff;
+	--body-back-dk: #f5f5f5;
+	--body-gray: #fcfcfc;
+	--body-gray-dk: #e7e7e7;
+	--body-back-alt: #ebf5ef;
+	--body-text: #333333;
+	--body-text-alt: #336633;
+	--body-text-lt: #999999;
+	--body-font: Roboto, Verdana, sans-serif;
+	
+	--red: #dd0000;
+	--red-dk: #660000;
+
+	--head-back: #1b242d;
+	--head-back-lt: #454d55;
+	--head-text: #bdbdbd;
+	--head-text-lt: #ffffff;
+	--head-text-alt: #5a6268;
+
+	--panel-back: #016B45;
+	--panel-back-lt: #80b5a2;
+	--panel-back-dk: #00301f;
+	--panel-back-md: #005234;
+	--panel-back-alt: #0b4430;
+	--panel-back-sel: #00b171;
+	--panel-text: #ffffff;
+	--panel-text-dk: #b7bfc3;
+	--panel-font: Roboto, Verdana, sans-serif;
+
+	--bg-grad-h:linear-gradient(to right, #ffffff, #ebf5ef, #ffffff);
+	--bg-grad-v:linear-gradient(45deg, #eee, #ccc, #ddd);
+
+	--btn-bg:linear-gradient(0deg,#cccccc,#fafafa);
+	--btn-bg-dk: #1d1d1d;
+	--btn-bg-alt:linear-gradient(180deg,#cccccc,#fafafa);
+	--btn-fg:#333333;
+	--btn-bg-red:linear-gradient(0deg,#cc9999,#facccc);
+	--btn-bg-red-alt:linear-gradient(180deg,#cc9999,#facccc);
+	--btn-fg-red:#993333;
+	--btn-bg-green:linear-gradient(0deg,#99cc99,#ccfacc);
+	--btn-bg-green-alt:linear-gradient(180deg,#99cc99,#ccfacc);
+	--btn-fg-green:#339933;
+
+	--balloon-back:#ffffcc;
+	--balloon-text:#663333;
+	--balloon-sel-back:#6699aa;
+	--balloon-sel-text:#ffffff;
+	--balloon-h-back:#996600;
+	--balloon-h-text:#ffffff;
+	
+	--balloon-border:#999999;
+
+	--pop-back:#ffffff;
+	--pop-sel-back:#e5e5e5;
+	--pop-sel-text:#ffff00;
+	--pop-font:Roboto, Verdana, sans-serif;
+}
+
+@font-face {
+	font-family:SansItalic;
+	src:url('/css/fonts/MyriadPro-CondIt.woff');
+}
+@font-face {
+	font-family:SansCond;
+	src:url('/css/fonts/MyriadPro-Cond.woff');
+}
+@font-face {
+	font-family:SansCondBold;
+	src:url('/css/fonts/MyriadPro-BoldCond.woff');
+}
+@font-face {
+	font-family:SansCaps;
+	src:url('/css/fonts/MyriadPro-BlackCond.woff');
+}
+@font-face {
+	font-family:Seriff;
+	src:url('/css/fonts/NotoSerif.woff');
+}
+@font-face {
+	font-family:SeriffItalic;
+	src:url('/css/fonts/NotoSerif-Italic.woff');
+}
+@font-face {
+	font-family:SansMono;
+	src:url('/css/fonts/UbuntuMono-Regular.woff');
+}
+@font-face {
+	font-family:Sitements;
+	src:url('/css/fonts/sitements.otf');
+}
+
